@@ -1,0 +1,38 @@
+{
+ "durak": 20789,
+ "sefer": 51522,
+ "pencereler": {
+  "08:00": {
+   "dosya": "pencere-0800.bin",
+   "baglanti": 322805,
+   "sefer": 16618
+  },
+  "13:00": {
+   "dosya": "pencere-1300.bin",
+   "baglanti": 268226,
+   "sefer": 13843
+  },
+  "18:00": {
+   "dosya": "pencere-1800.bin",
+   "baglanti": 278754,
+   "sefer": 14885
+  },
+  "23:00": {
+   "dosya": "pencere-2300.bin",
+   "baglanti": 93947,
+   "sefer": 4823
+  }
+ },
+ "atilan": {
+  "pencere-0800.bin": 112,
+  "pencere-1300.bin": 105,
+  "pencere-1800.bin": 90,
+  "pencere-2300.bin": 74
+ },
+ "kaynak": {
+  "iett": "İBB Açık Veri, İETT GTFS (takvim 16.03.2026–31.12.2026)",
+  "rayli": "İBB Açık Veri, Toplu Ulaşım GTFS (metro, Marmaray, vapur, minibüs, dolmuş; 2024 tarifesi)"
+ },
+ "yurume_hiz": 1.2,
+ "dolambac": 1.3
+}

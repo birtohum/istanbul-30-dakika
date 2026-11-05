@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İstanbul'da 30 dakikada nereye gidebilirsin?</title>
+<meta name="description" content="Haritada bir yere dokun: otobüs, metrobüs, metro, Marmaray, vapur ve yürüyüşle 15, 30 ve 45 dakikada ulaşılan alan. İBB açık GTFS tarifesiyle tarayıcıda hesaplanır.">
+<meta property="og:title" content="İstanbul'da 30 dakikada nereye gidebilirsin?">
+<meta property="og:description" content="Toplu taşımayla 15/30/45 dakikada ulaşılan alan; 39 ilçe karşılaştırması. İBB açık veri.">
+<meta property="og:image" content="https://birtohum.github.io/istanbul-30-dakika/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="stil.css?v=1">
+</head>
+<body>
+<main>
+  <header class="ust">
+    <p class="ust-etiket">İBB açık tarife · 20.789 durak</p>
+    <h1>İstanbul'da 30 dakikada<br>nereye gidebilirsin?</h1>
+    <p class="giris">Haritada bir yere dokun. Otobüs, metrobüs, metro, Marmaray, vapur ve yürüyüşle 15, 30 ve 45 dakikada ulaşabileceğin alan boyanır.</p>
+  </header>
+
+  <section class="harita-kutu">
+    <div class="arac">
+      <div class="saatler" id="saatler" role="radiogroup" aria-label="Yola çıkış saati">
+        <button data-s="0800" class="secili" role="radio" aria-checked="true">08:00</button>
+        <button data-s="1300" role="radio" aria-checked="false">13:00</button>
+        <button data-s="1800" role="radio" aria-checked="false">18:00</button>
+        <button data-s="2300" role="radio" aria-checked="false">23:00</button>
+      </div>
+      <div class="hazir" id="hazir"></div>
+    </div>
+    <div class="harita" id="harita"><canvas id="boya"></canvas><div class="bekle" id="bekle">Tarife yükleniyor…</div></div>
+    <div class="lejant" id="lejant">
+      <span><i class="b15"></i>15 dk</span><span><i class="b30"></i>30 dk</span><span><i class="b45"></i>45 dk</span>
+    </div>
+    <div class="sonuc" id="sonuc" aria-live="polite"></div>
+  </section>
+
+  <section class="blok">
+    <h2>Hangi ilçe daha bağlantılı?</h2>
+    <p class="alt">Her ilçede, bir durağa en fazla 500 m uzaklıktaki 1 km aralıklı noktalardan hafta içi 08:00'de yola çıkınca 30 dakikada ulaşılan kara alanının ortancası.</p>
+    <div class="siralama" id="siralama"></div>
+  </section>
+
+  <footer class="dip">
+    <p><b>Nasıl hesaplanıyor:</b> Hafta içi tarifesiyle, seçtiğin saatte yola çıktığını varsayan bağlantı tarama algoritması (Connection Scan) tarayıcında çalışır. Yürüme hızı 1,2 m/sn alınır ve kuş uçuşu mesafe ×1,3 ile gerçek yola çevrilir. Başlangıçta en fazla 1 km yürünür, duraklar arası aktarmada 300 m'ye kadar yürünür, araç değiştirirken 1 dakika pay bırakılır. Ulaşılan her duraktan kalan sürede yürünebilecek alan boyanır; alan yalnız karada sayılır.</p>
+    <p><b>Sınırlar:</b> Bunlar tarife süreleri, trafik hesaba katılmıyor; özellikle akşam saatlerinde otobüsler tarifeden yavaş gidebilir. İETT tarifesi 2026'nın; metro, Marmaray, vapur, minibüs ve dolmuş tarifesi İBB'nin 2024 verisi, sonra açılan hatlar eksik olabilir. Duraklarda saati verilmemiş geçişler mesafeye göre ara değerle dolduruldu ve 110 km/sa'ten hızlı görünen birkaç yüz tarife hatası atıldı.</p>
+    <p><b>Veri:</b> <a href="https://data.ibb.gov.tr/dataset/iett-gtfs-verisi">İETT GTFS</a> ve <a href="https://data.ibb.gov.tr/dataset/public-transport-gtfs-data">Toplu Ulaşım GTFS</a> (İBB Açık Veri Lisansı) · ilçe sınırları <a href="https://www.geoboundaries.org/">geoBoundaries</a>/OpenStreetMap (ODbL); harita bu sınırlardan çiziliyor.</p>
+    <p><a href="https://github.com/birtohum/istanbul-30-dakika">Kaynak kodu</a> · <a href="https://birtohum.github.io/">birtohum</a></p>
+  </footer>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="erisim.js?v=1"></script>
+<script src="uygulama.js?v=1"></script>
+</body>
+</html>
