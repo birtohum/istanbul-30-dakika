@@ -1,0 +1,10 @@
+:root{--zemin:#10141a;--kart:#1a2028;--yazi:#f4f6f8;--soluk:#9aa6b2;--cizgi:#2b333d;--vurgu:#2fd08d}
+body{font-family:Barlow,sans-serif;background:var(--zemin);border-top:8px solid;border-image:linear-gradient(90deg,#e30a17 0 20%,#00a651 20% 40%,#0072ce 40% 60%,#f7a600 60% 80%,#a05eb5 80%) 1}
+h1{font-family:"Barlow Condensed",sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(56px,11vw,124px);line-height:.92;letter-spacing:.005em}
+.ust-etiket{font-family:"Barlow Condensed",sans-serif;letter-spacing:.16em}
+button{font-family:"Barlow Condensed",sans-serif!important;font-weight:600!important;letter-spacing:.03em}
+h1{text-wrap:balance}
+.dip{border-top:1px solid var(--cizgi)}
+/*2*/
+:root{--b15:#5eead4;--b30:#22a08a;--b45:#155e52;--deniz:#0b1520;--kara:#1a1f26;--sinir:#343c46}
+.lejant .isi{background:linear-gradient(90deg,#232a31,var(--b45),var(--b30),var(--b15))}

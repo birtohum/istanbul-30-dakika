@@ -61,7 +61,7 @@ function ciz() {
     const r15 = renk("--b15"), r30 = renk("--b30"), r45 = renk("--b45");
     for (const n of izgara.noktalar) {
       const f = Math.min(1, n[3] / enb);
-      x.fillStyle = f > 0.66 ? r15 : f > 0.4 ? r30 : f > 0.2 ? r45 : KOYU.matches ? "#2a3035" : "#e7e5dc";
+      x.fillStyle = f > 0.66 ? r15 : f > 0.4 ? r30 : f > 0.2 ? r45 : "#232a31";
       const p = harita.latLngToContainerPoint([n[0], n[1]]);
       x.fillRect(p.x - k / 2, p.y - k / 2, k + 0.5, k + 0.5);
     }
